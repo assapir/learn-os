@@ -1,8 +1,5 @@
-use core::arch::asm;
-
-pub fn hlt() -> ! {
-    unsafe {
-        asm!("hlt");
+pub fn hlt_loop() -> ! {
+    loop {
+        x86_64::instructions::hlt();
     }
-    loop {} // We don't really need that, only for types to be happy
 }
